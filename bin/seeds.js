@@ -19,22 +19,22 @@ const admin = {
 };
 const productsArray = [
   {
-    name: "scissorsSet",
+    name: "Scissors Set",
     description: "the perfect scissor set for your beard",
     price: 30
   },
   {
-    name: "MacNotePro",
+    name: "MacNote Pro",
     description: "the perfect noteBOOK to design is mouse free :D",
-    price: 100
+    price: 1000
   },
   {
-    name: "beardWax",
+    name: "Tha Beard Wax",
     description: "you beard needs it and you know it",
     price: 10
   },
   {
-    name: "HipGlasses",
+    name: "Tha Hip Glasses",
     description: "the perfect choice if you cannot have beard",
     price: 60
   }
