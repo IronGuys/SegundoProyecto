@@ -4,6 +4,7 @@ const Schema   = mongoose.Schema;
 const ProductSchema = new Schema({
   name: String,
   description: String,
+  price: Number
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
