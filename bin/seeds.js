@@ -20,7 +20,7 @@ const admin = {
 const productsArray = [
   {
     name: "scissorsSet",
-    description: "the perfect sciissor set for your beard",
+    description: "the perfect scissor set for your beard",
     price: 30
   }
 ];
