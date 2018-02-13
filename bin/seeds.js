@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 const User = require("../models/User");
-const Product = require("../models/Product");
+const Product = require("../models/products");
 
 mongoose
   .connect("mongodb://localhost/HipStore")
@@ -39,7 +39,7 @@ const productsArray = [
     price: 60
   }
 ];
-products.collection.drop();
+Product.collection.drop();
 
 productsArray.forEach(product => {
   let newProduct = new Product(product);
