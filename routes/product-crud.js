@@ -24,4 +24,4 @@ router.get('/Product/:id', (req, res) => {
     });
 })
 
-module.exports = product-crud
+module.exports = router

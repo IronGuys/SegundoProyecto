@@ -18,13 +18,6 @@ mongoose.connect(dbURL)
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
-const geeks = require('./views/geeks');
-const store = require('./views/store');
-const pricing = require('./views/pricing');
-const features = require('./views/features');
-const cart = require('./views/cart');
-const about = require('./views/about');
-const contact = require('./views/contact');
 
 const app = express();
 
@@ -52,7 +45,7 @@ passportConfig(app);
 
 app.use((req,res,next) => {
   res.locals.user = req.user;
-  res.locals.title = 'HIP-STORE';
+  res.locals.title = 'Passport Auth 0118';
   next();
 }) 
 
