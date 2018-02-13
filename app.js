@@ -18,6 +18,7 @@ mongoose.connect(dbURL)
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const products = require('./routes/product-crud');
 
 const app = express();
 
@@ -48,9 +49,10 @@ app.use((req,res,next) => {
   res.locals.title = 'Passport Auth 0118';
   next();
 }) 
-
+//el principio de la ruta que introduce en el navegador
 app.use('/', index);
 app.use('/auth', auth);
+app.use('/products', products)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

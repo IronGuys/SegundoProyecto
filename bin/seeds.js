@@ -22,9 +22,24 @@ const productsArray = [
     name: "scissorsSet",
     description: "the perfect scissor set for your beard",
     price: 30
+  },
+  {
+    name: "MacNotePro",
+    description: "the perfect noteBOOK to design is mouse free :D",
+    price: 100
+  },
+  {
+    name: "beardWax",
+    description: "you beard needs it and you know it",
+    price: 10
+  },
+  {
+    name: "HipGlasses",
+    description: "the perfect choice if you cannot have beard",
+    price: 60
   }
 ];
-Product.collection.drop();
+products.collection.drop();
 
 productsArray.forEach(product => {
   let newProduct = new Product(product);
