@@ -9,14 +9,14 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-// router.get('/private', isLoggedIn, function(req, res, next) {
-//   res.render('private');
-// });
+router.get('/private', isLoggedIn, function(req, res, next) {
+  res.render('private');
+});
 
 
-// router.get('/onlyme', onlyMe, function(req, res, next) {
-//   res.render('private');
-// });
+router.get('/onlyme', onlyMe, function(req, res, next) {
+  res.render('private');
+});
 
 //redireccion a la Home
 router.get("/logout", (req, res, next) => {
