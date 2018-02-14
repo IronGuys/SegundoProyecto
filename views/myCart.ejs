@@ -1,0 +1,10 @@
+<h1>Hola</h1>
+
+<% if(cart){%>
+    <p><%= cart %></p>
+<% }else{%>
+    <p>Tu no tienes carrito</p>
+    <form action="/cart" method="POST">
+        <button>Create Cart</button>
+    </form>
+<% }%>

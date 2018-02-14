@@ -10,3 +10,10 @@
     <%= producto.description %>
 </p>
     </br>
+
+    <form action="/cart/addProduct" method="post">
+        <input type="text" value="<%= producto._id %>" name="productid">
+        <input type="text" value="<%= userid %>" name="userid">
+
+    <button>Add Product</button>
+    </form>

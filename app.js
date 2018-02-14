@@ -19,6 +19,7 @@ mongoose.connect(dbURL)
 const index = require('./routes/index');
 const auth = require('./routes/auth');
 const products = require('./routes/product-crud');
+const cart = require("./routes/cart");
 
 const app = express();
 
@@ -46,13 +47,15 @@ passportConfig(app);
 
 app.use((req,res,next) => {
   res.locals.user = req.user;
-  res.locals.title = 'Passport Auth 0118';
+  res.locals.title = 'HipStore';
   next();
 }) 
 //el principio de la ruta que introduce en el navegador
 app.use('/', index);
 app.use('/auth', auth);
-app.use('/products', products)
+app.use('/products', products);
+app.use("/cart", cart);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -21,7 +21,10 @@ router.get('/onlyme', onlyMe, function(req, res, next) {
 });
 router.get("/producto/:id", function(req, res, next) {
   Product.findOne({_id:req.params.id}).then(producto => {
-    res.render("product-page", { producto: producto });
+    res.render("product-page", {
+      producto: producto,
+      userid: req.user._id
+    });
   });
 });
 router.get("/product-page", (req, res, next) => {
