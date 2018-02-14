@@ -1,22 +1,10 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const bcryptSalt = 10;
-const User = require("../models/User");
 const Product = require("../models/products");
 
 mongoose
-  .connect("mongodb://localhost/HipStore")
-  .then(() => console.log("Conectado con Seeds!"));
-var salt = bcrypt.genSaltSync(bcryptSalt);
-const password = "ironguys";
-var encryptedPass = bcrypt.hashSync(password, salt);
+  .connect("mongodb://admin:admin@ds235388.mlab.com:35388/hipstore")
+  .then(() => console.log("Conectado con Seeds!")).catch(error=>console.log(error))
 
-const admin = {
-  username: "admin",
-  name: "HipStore",
-  password: encryptedPass,
-  role: "admin"
-};
 const productsArray = [
   {
     name: "Scissors Set",
