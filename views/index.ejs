@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-  </head>
-  <body>
-      <%= producto %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <% if(!user) { %>
-      <ul>
-        <li><a href="/auth/login">Login</a></li>
-        <li><a href="/auth/signup">Signup</a></li>
-        <li><a href="/auth/product-page">Product page</a></li>
-        
-      </ul>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <ul>
+    <% productos.forEach (p =>{ %>
+      <li>
+        <ul>
+          <li><a href="producto/<%= p._id %>"><%= p.name %></a>     
+          </li>
+          <li>
+            <%= p.description %>
+          </li>
+          <li><%=p.price %></li>
+        </ul>
+      </li>
+
+      <%}) %>
+  </ul>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to
+    <%= title %>
+  </p>
+  <% if(!user) { %>
+    <ul>
+      <li>
+        <a href="/auth/login">Login</a>
+      </li>
+      <li>
+        <a href="/auth/signup">Signup</a>
+      </li>
+      <li>
+        <a href="/auth/product-page">Product page</a>
+      </li>
+
+    </ul>
     <% } else { %>
-      <h2>Hola <%= user.username %></h2>
-      <img src="/images/descarga.jpeg" alt=""/>
-    </br>
+      <h2>Hola
+        <%= user.username %>
+      </h2>
+      <img src="/images/descarga.jpeg" alt="" />
+      </br>
       <a href="/private">Ver a los simpson</a>
       <a href="/onlyme?id=<%= user._id %>">Onlyme</a>
       <a href="/auth/logout">Logout</a>
-    <% } %>
-  </body>
+      <% } %>
+</body>
+
 </html>
