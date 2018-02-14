@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
-    dbURL: 'mongodb://localhost/passport-auth-0118'
-}
+  dbURL: process.env.MONGO_URL
+};
