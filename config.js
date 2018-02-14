@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
-    dbURL: 'mongodb://localhost/HipStore'
-}
+  dbURL: process.env.MONGO_URL
+};
