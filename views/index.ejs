@@ -1,225 +1,118 @@
 <!DOCTYPE html>
 <html>
+<h1>
+  Welcome to
+  <%= title %>
+</h1>
 
-<head>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-  crossorigin="anonymous">
-</head>
-<body>
+<% if(!user) { %>
+  <ul>
 
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
 
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <a href="/"> <img src="images/barba.jpg" alt=""></a>
-        </div>
+  </ul>
+  <% } else { %>
+    <h2>Hola
+      <%= user.username %>
+    </h2>
+    </br>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/display ">Products</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-                <strong class="caret"></strong>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="#">Action</a>
-                </li>
-                <li>
-                  <a href="#">Another action</a>
-                </li>
-                <li>
-                  <a href="#">Something else here</a>
-                </li>
-                <li class="divider">
-                </li>
-                <li>
-                  <a href="#">Separated link</a>
-                </li>
-                <li class="divider">
-                </li>
-                <li>
-                  <a href="#">One more separated link</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" />
+
+    <% } %>
+
+      <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+      </head>
+
+      <body>
+
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a href="/">
+                    <img src="images/barba.jpg" alt="">
+                  </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li class="active">
+                      <a href="/">Home</a>
+                    </li>
+                    <li>
+                      <a href="/display ">Products</a>
+                    </li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li>
+                      <a href="/auth/signup">Signup</a>
+                    </li>
+                    <li>
+                      <a href="/auth/login">Login</a>
+                    </li>
+                    <li>
+                      <a href="/auth/logout">Logout</a>
+                    </li>
+                    <li>
+                      <a href="/cart">Cart</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </nav>
             </div>
-            <button type="submit" class="btn btn-default">
-              Submit
-            </button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#">Link</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-                <strong class="caret"></strong>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="#">Action</a>
-                </li>
-                <li>
-                  <a href="#">Another action</a>
-                </li>
-                <li>
-                  <a href="#">Something else here</a>
-                </li>
-                <li class="divider">
-                </li>
-                <li>
-                  <a href="#">Separated link</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12 imagebackground">
 
-      </nav>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="carousel slide" id="carousel-785155">
-              <ol class="carousel-indicators">
-                <li class="active" data-slide-to="0" data-target="#carousel-785155">
-                </li>
-                <li data-slide-to="1" data-target="#carousel-785155">
-                </li>
-                <li data-slide-to="2" data-target="#carousel-785155">
-                </li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="item active">
-                  <img alt="Carousel Bootstrap First" src="http://lorempixel.com/output/sports-q-c-1600-500-1.jpg" />
-                  <div class="carousel-caption">
-                    <h4>
-                      First Thumbnail label
-                    </h4>
-                    <p>
-                      Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-                      dolor id nibh ultricies vehicula ut id elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="item">
-                  <img alt="Carousel Bootstrap Second" src="http://lorempixel.com/output/sports-q-c-1600-500-2.jpg" />
-                  <div class="carousel-caption">
-                    <h4>
-                      Second Thumbnail label
-                    </h4>
-                    <p>
-                      Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-                      dolor id nibh ultricies vehicula ut id elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="item">
-                  <img alt="Carousel Bootstrap Third" src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg" />
-                  <div class="carousel-caption">
-                    <h4>
-                      Third Thumbnail label
-                    </h4>
-                    <p>
-                      Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-                      dolor id nibh ultricies vehicula ut id elit.
-                    </p>
-                  </div>
-                </div>
               </div>
-              <a class="left carousel-control" href="#carousel-785155" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-              </a>
-              <a class="right carousel-control" href="#carousel-785155" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 alinearContenido">
+              <img alt="Bootstrap Image Preview" src="/images/no-shave-november-mustache-png-3895.png" id="imagen1" />
+            </div>
+            <div class="col-md-4 alinearContenido">
+              <img alt="Bootstrap Image Preview" src="images/barbadepato.png" id="imagen2" />
+            </div>
+            <div class="col-md-4 alinearContenido">
+              <img alt="Bootstrap Image Preview" src="images/hipster.png" id="imagen3" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 info" >
+              <h3>
+                ¿Quienes Somos?
+                Somos Personas como tú. Buscamos simplicidad, minimalismo, originalidad, practicidad y sobre todo calidad. Nuestra misión
+                es ofrecerte los mejores productos sin buscar tanto
+              </h3>
+            </div>
+            <div class="col-md-4 info">
+              <h3>
+                ¿Que Queremos Lograr?
+                Sencillo, Darte lo que necesitas cuando lo necesitas como lo necesitas y sin ningún tipo de retrasos ni problemas.
+              </h3>
+            </div>
+            <div class="col-md-4 info">
+              <h3>
+                ¿Por que? Porque Podemos.
+              </h3>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-    <div class="row">
-    <div class="col-md-4">
-      <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
-    </div>
-    <div class="col-md-4">
-      <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
-    </div>
-    <div class="col-md-4">
-      <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <h3>
-        h3. Lorem ipsum dolor sit amet.
-      </h3>
-      <p>
-        Lorem ipsum dolor sit amet,
-        <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea
-        dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor.
-        Sed iaculis posuere diam ut cursus.
-        <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus,
-          id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus.
-        <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat
-          eu.</small>
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h3>
-        h3. Lorem ipsum dolor sit amet.
-      </h3>
-      <p>
-        Lorem ipsum dolor sit amet,
-        <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea
-        dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor.
-        Sed iaculis posuere diam ut cursus.
-        <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus,
-          id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus.
-        <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat
-          eu.</small>
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h3>
-        h3. Lorem ipsum dolor sit amet.
-      </h3>
-      <p>
-        Lorem ipsum dolor sit amet,
-        <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea
-        dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor.
-        Sed iaculis posuere diam ut cursus.
-        <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus,
-          id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus.
-        <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat
-          eu.</small>
-      </p>
-    </div>
-  </div>
-</div>
 
 
 
@@ -229,38 +122,8 @@
 
 
 
-  
-  <h1>
-    <%= title %>
-  </h1>
-   
-  <p>Welcome to
-    <%= title %>
-  </p>
-  <% if(!user) { %>
-    <ul>
-      <li>
-        <a href="/auth/login">Login</a>
-      </li>
-      <li>
-        <a href="/auth/signup">Signup</a>
-      </li>
-      <li>
-        <a href="/auth/product-page">Product page</a>
-      </li>
 
-    </ul>
-    <% } else { %>
-      <h2>Hola
-        <%= user.username %>
-      </h2>
-     </br>
-      <a href="/cart">Go to cart</a>
-      <a href="/display"> Lista de Productos</a>
-      <a href="/private">Profile</a>
-      
-      <a href="/auth/logout">Logout</a>
-      <% } %>
-</body>
+
+      </body>
 
 </html>

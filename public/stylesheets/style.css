@@ -1,8 +1,34 @@
 body {
+  background-color: #caa57f;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+.carousel-inner img{
+}
+#imagen1{
+  margin:10%; 
+  max-width: 150px;
+}
+#imagen2{
+  margin-top:5% ;
+  max-width: 150px;
+}
+#imagen3{
+  margin: 10%;
+  max-width: 100px;
+}
+.alinearContenido{
+  text-align: center;
+}
+.imagebackground{
+height: 500px;
+background: url("../images/hipsterplace.jpg") center center no-repeat;
+background-size: cover;
+}
+.info{
+  text-align: center;
 }
