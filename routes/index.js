@@ -11,6 +11,13 @@ router.get("/", function(req, res, next) {
     res.render("index", { productos: productos });
   });
 });
+
+router.get("/display", function(req, res, next) {
+  Product.find().then(productos => {
+    res.render("Display", { productos });
+  });
+});
+
 router.get('/private', isLoggedIn, function(req, res, next) {
   res.render('private');
 });

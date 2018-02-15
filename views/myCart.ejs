@@ -1,12 +1,29 @@
 <h1>Hola</h1>
 
 <% if(cart){%>
-    <p><%= cart %></p>
-<% }else{%>
-    <p>Tu no tienes carrito</p>
-    <form action="/cart" method="POST">
-        <button>Create Cart</button>
-    </form>
-<% }%>
+    <% for(var i=0; i<cart.products.length; i++) {%>
+        <div>
 
-<h2><%= object.ownerId %></h2>
+            <p>
+                <%= cart.products[i].name%>
+            </p>
+            <p>
+                <%= cart.products[i].price%>
+            </p>
+            <p>
+                <%= cart.products[i].description%>
+            </p>
+            <form action="/cart/deleteProduct" method="POST">
+                <input type="text" hidden value="<%= cart.products[i]._id %>" name="productid">
+                <input type="text" hidden value="<%= ownerId %>" name="userid">
+                <button>delete Product</button>
+            </form>
+        </div>
+
+        <% } %>
+            <% }else{%>
+                <p>Tu no tienes carrito</p>
+                <form action="/cart" method="POST">
+                    <button>Create Cart</button>
+                </form>
+                <% }%>
