@@ -3,7 +3,7 @@ const router = express.Router();
 const isLoggedIn = require('../middlewares/isLoggedIn');
 const onlyMe = require('../middlewares/onlyMe');
 const Product = require("../models/products");
-// const producto = requ
+
 /* GET home page. */
 
 router.get("/", function(req, res, next) {
