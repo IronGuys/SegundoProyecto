@@ -8,7 +8,11 @@
 </head>
 
 <body>
-  <ul>
+
+  <h1>
+    <%= title %>
+  </h1>
+    <ul>
     <% productos.forEach (p =>{ %>
       <li>
         <ul>
@@ -23,9 +27,6 @@
 
       <%}) %>
   </ul>
-  <h1>
-    <%= title %>
-  </h1>
   <p>Welcome to
     <%= title %>
   </p>
@@ -46,11 +47,11 @@
       <h2>Hola
         <%= user.username %>
       </h2>
-      <img src="/images/descarga.jpeg" alt="" />
-      </br>
+     </br>
       <a href="/cart">Go to cart</a>
-      <a href="/private">Ver a los simpson</a>
-      <a href="/onlyme?id=<%= user._id %>">Onlyme</a>
+      <a href="/display"> Lista de Productos</a>
+      <a href="/private">Profile</a>
+      
       <a href="/auth/logout">Logout</a>
       <% } %>
 </body>

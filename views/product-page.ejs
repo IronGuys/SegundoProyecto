@@ -12,8 +12,8 @@
     </br>
 
     <form action="/cart/addProduct" method="post">
-        <input type="text" value="<%= producto._id %>" name="productid">
-        <input type="text" value="<%= userid %>" name="userid">
+        <input type="text" hidden value="<%= producto._id %>" name="productid">
+        <input type="text" hidden value="<%= userid %>" name="userid">
 
     <button>Add Product</button>
     </form>

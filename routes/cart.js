@@ -7,9 +7,11 @@ const Cart = require("../models/Cart");
 router.get("/", (req, res, next) => {
     Cart.findOne({ "ownerId": req.user._id }).populate("products")
     .then(cart => {
-        let cartObject;
-        let pricesArray = cart.products.map((e)=> e.price)
-        console.log(pricesArray.reduce((a,b)=>a+b))
+        if(cart!=null&&cart.products.length!=0){
+            let cartObject;
+            let pricesArray = cart.products.map((e)=> e.price)
+            let sumaProductos = (pricesArray.reduce((a,b)=>a+b))
+        }
         if(cart!=null)cartObject = cart
         else cartObject = undefined;
         res.render("myCart", { cart: cartObject });
@@ -17,11 +19,11 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-      new Cart({ ownerId: req.user._id })
+    let nuevoCarrito =  new Cart({ ownerId: req.user._id })
         .save()
         .then(newCart => console.log(newCart))
         .catch(err => console.log(err));
-        res.redirect('/cart')
+        res.redirect('/cart', {object: nuevoCarrito})
 });
 router.post("/addProduct", (req, res, next) => {
 
